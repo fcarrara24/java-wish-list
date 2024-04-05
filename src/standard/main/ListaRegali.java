@@ -1,9 +1,17 @@
-package standard;
+package standard.main;
+
+import standard.utilities.ComparatoreRegali;
+import standard.utilities.FileUtilities;
+import standard.object.Regalo;
 
 import java.io.IOException;
 import java.util.*;
 
 public class ListaRegali {
+    /**
+     * continua a chiedere all'utente se ordinare i file in ordine alfabetico o inverso
+     * @return
+     */
     public static boolean ordineAlfabetico(){
         Scanner sc = new Scanner(System.in);
         boolean flag = false;
@@ -29,6 +37,12 @@ public class ListaRegali {
         return new Regalo(nome);
     }
 
+    /**
+     * data ua List<Regalo> itera per ciascun elemento di questa e ritorna una stringa contente
+     * i nomi dei regali separati con una ","
+     * @param lista
+     * @return
+     */
     public static  String stampaLista(List<Regalo> lista){
         Iterator<Regalo> it = lista.iterator();
         StringBuilder outString = new StringBuilder();
@@ -37,10 +51,9 @@ public class ListaRegali {
         }
         return outString.toString();
     }
+
+
     public static void main(String[] args) {
-
-
-
         List<Regalo> lista =  new ArrayList<>();
         try{
             lista = FileUtilities.readDataAsList();

@@ -1,12 +1,18 @@
-package standard;
+package standard.utilities;
 
-import com.sun.xml.internal.fastinfoset.util.StringArray;
+import standard.object.Regalo;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtilities {
+    /**
+     * scompone e inserisce una lista di <Regalo> all'interno di data.txt
+     * lancia un eccezione se nessun file di quel tipo è presente
+     * @param regali
+     * @throws IOException
+     */
     public static void writeData(List<Regalo> regali) throws IOException {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("./res/data.txt"))){
@@ -20,6 +26,12 @@ public class FileUtilities {
 
     }
 
+    /**
+     * legge i dati da "data.txt" e li inserisce in una lista di dati,
+     * lancia un eccezione se non trova il fle
+     * @return
+     * @throws IOException
+     */
     public static List<Regalo> readDataAsList() throws  IOException{
         List<Regalo> outList = new ArrayList<>();
 

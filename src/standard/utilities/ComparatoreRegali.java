@@ -1,14 +1,23 @@
-package standard;
+package standard.utilities;
+
+import standard.object.Regalo;
 
 import java.util.Comparator;
 
 public class ComparatoreRegali implements Comparator<Regalo> {
     public boolean alphabetic;
 
+    /**
+     * creazione del costuttore nel quale è istanziabile se è da ordinare in modo alfabetico o meno
+     * @param alphabetic
+     */
     public ComparatoreRegali(boolean alphabetic) {
         this.alphabetic = alphabetic;
     }
 
+    /**
+     * creazione costruttore standard per retorcompatibilita
+     */
     public ComparatoreRegali() {
         this.alphabetic = true;
     }

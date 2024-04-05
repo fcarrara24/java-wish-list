@@ -1,4 +1,4 @@
-package standard;
+package standard.object;
 
 import java.util.Objects;
 
@@ -10,7 +10,6 @@ public class Regalo {
     }
 
     public String getNome() {
-
         return nome;
     }
 
