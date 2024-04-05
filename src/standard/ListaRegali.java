@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class ListaRegali {
+
+
     public static Regalo insertRegalo(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Nome regalo: ");
