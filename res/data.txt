@@ -1,1 +1,1 @@
-nintendo,play station,wii,xbox,
+xbox,wii,play station,palla,nintendo,
