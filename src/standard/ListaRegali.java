@@ -1,5 +1,6 @@
 package standard;
 
+import java.io.IOException;
 import java.util.*;
 
 public class ListaRegali {
@@ -19,7 +20,14 @@ public class ListaRegali {
         return outString.toString();
     }
     public static void main(String[] args) {
-        List<Regalo> lista = new ArrayList<>();
+        List<Regalo> lista =  new ArrayList<>();
+        try{
+            lista = FileUtilities.readDataAsList();
+        } catch (IOException e){
+            System.out.println("file not found");
+        }
+
+
         boolean continua = true;
         Scanner scan = new Scanner(System.in);
         while(continua){
@@ -34,5 +42,13 @@ public class ListaRegali {
         //ordinamento stringa
         Collections.sort(lista, new ComparatoreRegali());
         System.out.println("lista ordinata: "+stampaLista(lista));
+
+        //salvo in un file
+
+        try {
+            FileUtilities.writeData(lista);
+        } catch (IOException e) {
+            throw new RuntimeException("file di salvataggio non trovato");
+        }
     }
 }

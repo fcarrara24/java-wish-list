@@ -20,8 +20,6 @@ public class Regalo {
 
     @Override
     public String toString() {
-        return "Regalo{" +
-                "nome='" + nome + '\'' +
-                '}';
+        return this.getNome();
     }
 }
